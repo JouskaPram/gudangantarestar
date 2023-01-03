@@ -1,13 +1,15 @@
 {% extends 'base.html' %} {%block content%}
 
 <div class="md:px-16 md:pt-10 px-3 pt-10">
+  <!-- Header Area -->
+
   <div class="w-full rounded-2xl border border-slate-400 md:h-56 h-24 flex">
     {%load static%}
     <img
       src="{% static 'img/logo.png' %}"
       class="overflow-hidden opacity-75"
       height="100% "
-      alt=""
+      alt="Antarestar"
     />
     <div class="flex items-center align-middle px-3">
       <h3
@@ -18,7 +20,7 @@
       <span
         class="md:text-5xl font-bold text-slate-300 text-left text-2xl align-middle"
       >
-        800
+        {{ total_sort }}
       </span>
     </div>
     <div
@@ -34,11 +36,15 @@
     </div>
   </div>
 
+  <!-- ./ EndHeader Area -->
+
   <input
-    class="bg-gray-900 focus:outline-none focus:shadow-outline border border-gray-300 rounded-lg py-2 px-4 block w-full appearance-none leading-normal mt-10"
+    class="bg-gray-900 focus:outline-none focus:shadow-outline border border-gray-300 rounded-lg py-2 px-4 block w-full appearance-none leading-normal mt-5"
     type="text"
     placeholder="Enter your name"
   />
+
+  <!-- Scanner Area -->
 
   <div
     class="flex flex-wrap justify-between justify-items-center gap-1 w-full pt-10 items-center"
@@ -51,15 +57,18 @@
         <div
           class="md:text-6xl text-4xl font-bold justify-items-center items-center text-center"
         >
-          <span class="text-center">76</span>
+          <span class="text-center">69</span>
         </div>
       </div>
       <h3
         class="text-center font-semibold text-2xl text-slate-400 my-3 uppercase"
       >
-        people 1
+        {{ scanner.name }}
       </h3>
     </div>
+
+    <!--  -->
+
     <div class="md:w-1/5 w-full mx-10 md:mx-0">
       <input type="radio" name="pram" id="" class="peer/draft radio" />
       <div
@@ -68,15 +77,18 @@
         <div
           class="md:text-6xl text-4xl font-bold justify-items-center items-center text-center"
         >
-          <span class="text-center">76</span>
+          <span class="text-center">69</span>
         </div>
       </div>
       <h3
         class="text-center font-semibold text-2xl text-slate-400 my-3 uppercase"
       >
-        people 1
+        {% if scan == "angle" %} {{ scan }} {% endif %}
       </h3>
     </div>
+
+    <!--  -->
+
     <div class="md:w-1/5 w-full mx-10 md:mx-0">
       <input type="radio" name="pram" id="" class="peer/draft radio" />
       <div
@@ -85,15 +97,20 @@
         <div
           class="md:text-6xl text-4xl font-bold justify-items-center items-center text-center"
         >
-          <span class="text-center">76</span>
+          <span class="text-center">69</span>
         </div>
       </div>
       <h3
         class="text-center font-semibold text-2xl text-slate-400 my-3 uppercase"
       >
-        people 1
+        {% if scan == "heri" %}
+        <p>{{ scan }}</p>
+        {% endif %}
       </h3>
     </div>
+
+    <!--  -->
+
     <div class="md:w-1/5 w-full mx-10 md:mx-0">
       <input type="radio" name="pram" id="" class="peer/draft radio" />
       <div
@@ -102,17 +119,20 @@
         <div
           class="md:text-6xl text-4xl font-bold justify-items-center items-center text-center"
         >
-          <span class="text-center">76</span>
+          <span class="text-center">69</span>
         </div>
       </div>
       <h3
         class="text-center font-semibold text-2xl text-slate-400 my-3 uppercase"
       >
-        people 1
+        {% if scan == "fazza" %} {{ scan }} {% endif %}
       </h3>
     </div>
   </div>
-</div>
-<!-- <button class="btn btn-primary" onclick="eabutton()">click me</button> -->
 
-{%endblock%}
+  <!-- ./end Scanner Area -->
+
+  <!-- <button class="btn btn-primary" onclick="eabutton()">click me</button> -->
+
+  {%endblock%}
+</div>
