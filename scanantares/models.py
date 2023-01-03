@@ -1,19 +1,18 @@
 from django.db import models
+from django.utils import timezone
 
 class Scanner(models.Model):
-    nama = models.CharField(max_length=9)
-    jumlah = models.TextField()
+    name = models.CharField(max_length=9)
 
     def __str__(self):
-        return self.nama
+        return self.name
 
 
 class Sortir(models.Model):
     barcode = models.CharField(max_length=40)
-    jumlah = models.IntegerField(null=True)
-    tanggal = models.DateTimeField()
     scanner_id = models.ForeignKey(
         Scanner, on_delete=models.CASCADE, null=True)
+    created_at = models.DateTimeField(default=timezone.now)
 
     def __str__(self):
-        return self.jumlah
+        return self.barcode

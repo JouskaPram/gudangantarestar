@@ -1,9 +1,10 @@
 {% extends 'base.html' %} {%block content%}
+
 <div class="md:px-16 md:pt-10 px-3 pt-10">
   <div class="w-full rounded-2xl border border-slate-400 md:h-56 h-24 flex">
     {%load static%}
     <img
-      src="{% static 'logo.png' %}"
+      src="{% static 'img/logo.png' %}"
       class="overflow-hidden opacity-75"
       height="100% "
       alt=""
@@ -32,6 +33,12 @@
       ></h3>
     </div>
   </div>
+
+  <input
+    class="bg-gray-900 focus:outline-none focus:shadow-outline border border-gray-300 rounded-lg py-2 px-4 block w-full appearance-none leading-normal mt-10"
+    type="text"
+    placeholder="Enter your name"
+  />
 
   <div
     class="flex flex-wrap justify-between justify-items-center gap-1 w-full pt-10 items-center"
@@ -106,5 +113,6 @@
     </div>
   </div>
 </div>
-<button class="btn btn-primary" onclick="eabutton()">click me</button>
+<!-- <button class="btn btn-primary" onclick="eabutton()">click me</button> -->
+
 {%endblock%}
