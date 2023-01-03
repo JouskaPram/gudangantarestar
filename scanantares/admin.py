@@ -1,9 +1,6 @@
 from django.contrib import admin
 from scanantares.models import Sortir, Scanner
 
-# Register your models here.
-
-
 class SortirAdmin(admin.ModelAdmin):
     list_display = ['barcode', 'jumlah', 'tanggal', 'scanner_id']
     search_fields = ['barcode', 'jumlah', 'tanggal']

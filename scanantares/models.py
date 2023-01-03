@@ -1,8 +1,5 @@
 from django.db import models
 
-# Create your models here.
-
-
 class Scanner(models.Model):
     nama = models.CharField(max_length=9)
     jumlah = models.TextField()
