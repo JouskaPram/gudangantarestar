@@ -5,5 +5,5 @@ from scanantares.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('main/', home),
+    path('', home),
 ]
