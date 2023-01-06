@@ -17,18 +17,18 @@
         <h3
           class="md:text-5xl text-2xl font-bold text-slate-300 align-middle text-left"
         >
-          Paket of the day :  {{ total }}
+          {{ total }}
         </h3>
        
       </div>
     </div>
     <div class="flex items-center align-middle px-3">
-      <div class="bg-blue-600 p-5 rounded-md">
+      <div class="bg-rose-600 p-5 rounded-md">
 
         <h3
           class="md:text-5xl text-2xl font-bold text-slate-300 align-middle text-left"
         >
-       Total Double Paket Today: 8
+          88
         </h3>
        </div>
       </div>
@@ -52,7 +52,7 @@
   <form action="" method="post">
     {% csrf_token %}
     <div class="mt-5">
-      <label for="hs-trailing-button-add-on" class="sr-only">Label</label>
+      <label for="hs-trailing-button-add-on" class="sr-only text-md ">This is Barcode</label>
       <div class="flex rounded-md shadow-sm">
         <input
           type="text"
@@ -98,7 +98,7 @@
           name="scanner"
           id="angle"
           value="angle"
-          class="mt-2 justify-between radio "
+          class="mt-2 justify-between radio peer/draft"
           required
         />
         <label for="angel">
@@ -127,7 +127,7 @@
           required
           id="latif"
           value="latif"
-          class="mt-2 justify-between radio"
+          class="mt-2 justify-between radio  peer/draft"
         />
         <label for="latif">
           <div
@@ -155,7 +155,7 @@
           id="fazza"
           required
           value="fazza"
-          class="mt-2 justify-between radio"
+          class="mt-2 justify-between radio peer/draft"
         />
         <label for="fazza">
           <div
@@ -183,7 +183,7 @@
           id="antarestar"
           required
           value="antarestar"
-          class="mt-2 justify-between radio"
+          class="mt-2 justify-between radio peer/draft"
         />
         <label for="antarestar">
           <div
