@@ -12,29 +12,40 @@
       alt="Antarestar"
     />
     <div class="flex items-center align-middle px-3">
-      <h3
-        class="md:text-5xl text-2xl font-bold text-slate-300 align-middle text-left"
-      >
-        Paket of the day :
-      </h3>
-      <span
-        class="md:text-5xl font-bold text-slate-300 text-left text-2xl align-middle"
-      >
-        {{ total }}
-      </span>
+      <div class="bg-blue-600 p-5 rounded-md">
+
+        <h3
+          class="md:text-5xl text-2xl font-bold text-slate-300 align-middle text-left"
+        >
+          Paket of the day :  {{ total }}
+        </h3>
+       
+      </div>
     </div>
-    <div
-      class="border-l-2 border-slate-400 h-full md:flex align-middle items-center hidden"
-    >
-      <h2 class="text-center font-semibold md:text-5xl px-3 text-slate-300">
-        Time Now
-      </h2>
-      <h3
-        id="time"
-        class="text-center font-semibold md:text-5xl px-3 text-slate-300"
-      ></h3>
+    <div class="flex items-center align-middle px-3">
+      <div class="bg-blue-600 p-5 rounded-md">
+
+        <h3
+          class="md:text-5xl text-2xl font-bold text-slate-300 align-middle text-left"
+        >
+       Total Double Paket Today: 8
+        </h3>
+       </div>
+      </div>
+      <div
+        class="border-l-2 border-slate-400 h-full md:flex align-middle items-center hidden"
+      >
+        <h2 class="text-center font-semibold md:text-5xl px-3 text-slate-300">
+          Time Now
+        </h2>
+        <h3
+          id="time"
+          class="text-center font-semibold md:text-5xl px-3 text-slate-300"
+        ></h3>
+      </div>
     </div>
-  </div>
+    
+ 
 
   <!-- ./ EndHeader Area -->
 
@@ -63,7 +74,7 @@
       class="flex flex-wrap justify-between justify-items-center gap-1 w-full pt-10 items-center"
     >
       {% for scan in scanner %}
-      <div class="flex flex-wrap justify-between">
+  
         <div class="w-full mx-10 md:mx-0">
           <input
             type="radio"
@@ -81,13 +92,13 @@
     <div
       class="flex flex-wrap justify-between justify-items-center gap-1 w-full pt-10 items-center"
     >
-      <div class="w-full mx-10 md:mx-0">
+      <div class="w-full mx-10 md:mx-0  md:w-1/5">
         <input
           type="radio"
           name="scanner"
           id="angle"
           value="angle"
-          class="mt-2 justify-between radio"
+          class="mt-2 justify-between radio "
           required
         />
         <label for="angel">
@@ -106,10 +117,10 @@
             angle
           </h3>
         </label>
-      </div>
+      
     </div>
-    <div class="flex flex-wrap justify-between">
-      <div class="w-full mx-10 md:mx-0">
+
+      <div class="w-full mx-10 md:mx-0 md:w-1/5">
         <input
           type="radio"
           name="scanner"
@@ -134,10 +145,10 @@
             latif
           </h3>
         </label>
-      </div>
+
     </div>
-    <div class="flex flex-wrap justify-between">
-      <div class="w-full mx-10 md:mx-0">
+
+      <div class="w-full mx-10 md:mx-0 md:w-1/5">
         <input
           type="radio"
           name="scanner"
@@ -162,10 +173,10 @@
             fazza
           </h3>
         </label>
-      </div>
+  
     </div>
-    <div class="flex flex-wrap justify-between">
-      <div class="w-full mx-10 md:mx-0">
+
+      <div class="w-full mx-10 md:mx-0 md:w-1/5">
         <input
           type="radio"
           name="scanner"
@@ -190,8 +201,9 @@
             antarestar
           </h3>
         </label>
-      </div>
+      
     </div>
+  </div>
   </form>
 
   <!-- <form action="" method="post">
@@ -208,8 +220,8 @@
         </button>
       </div>
     </div>
-    <div class="flex flex-wrap justify-between">
-      <div class="w-full mx-10 md:mx-0">{{ form.scanner_id }}</div>
+
+      <div class="w-full mx-10 md:mx-0 md:w-1/5">{{ form.scanner_id }}</div>
     </div>
 
     <button type="submit" class="btn btn-succes">submit</button>
@@ -269,5 +281,6 @@
   <!-- ./end Scanner Area -->
 
   <!-- <button class="btn btn-primary" onclick="eabutton()">click me</button> -->
+</div>
 </div>
 {%endblock%}
