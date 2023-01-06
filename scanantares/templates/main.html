@@ -20,7 +20,7 @@
       <span
         class="md:text-5xl font-bold text-slate-300 text-left text-2xl align-middle"
       >
-        {{ total_sort }}
+        {{ total }}
       </span>
     </div>
     <div
@@ -38,106 +38,210 @@
 
   <!-- ./ EndHeader Area -->
 
-  <!-- <form action="" method="post">
-    {% csrf_token %} {{ form.as_p }}
-    <button type="submit" class="btn btn-succes">submit</button>
-  </form> -->
-  <input
-    type="text"
-    class="bg-transparent border-none hover:border-none text-slate-300 !important"
-    placeholder="Enter your name"
-  />
-  <form method="post" action="">
-    {% csrf_token %} {% block Id %} {% endblock Id %}
+  <form action="" method="post">
+    {% csrf_token %}
+    <div class="mt-5">
+      <label for="hs-trailing-button-add-on" class="sr-only">Label</label>
+      <div class="flex rounded-md shadow-sm">
+        <input
+          type="text"
+          id="hs-trailing-button-add-on"
+          name="barcode"
+          class="py-3 px-4 block w-full border-gray-200 shadow-sm rounded-l-md text-sm focus:z-10 focus:border-blue-500 focus:ring-blue-500 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400"
+          required
+        />
+        <button
+          type="submit"
+          class="py-3 px-4 inline-flex flex-shrink-0 justify-center items-center gap-2 rounded-r-md border border-transparent font-semibold bg-blue-500 text-white hover:bg-blue-600 focus:z-10 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all text-sm"
+        >
+          Enter
+        </button>
+      </div>
+    </div>
+
+    <!-- <div
+      class="flex flex-wrap justify-between justify-items-center gap-1 w-full pt-10 items-center"
+    >
+      {% for scan in scanner %}
+      <div class="flex flex-wrap justify-between">
+        <div class="w-full mx-10 md:mx-0">
+          <input
+            type="radio"
+            name="scanner_id"
+            id="{{ scan.name }}"
+            value="{{ scan.name }}"
+            class="mt-2 justify-between radio"
+          />
+          <label for="{{ scan.name }}">{{ scan.name }}</label>
+        </div>
+      </div>
+      {% endfor %}
+    </div> -->
 
     <div
       class="flex flex-wrap justify-between justify-items-center gap-1 w-full pt-10 items-center"
     >
+      <div class="flex flex-wrap justify-between">
+        <div class="w-full mx-10 md:mx-0">
+          <input
+            type="radio"
+            name="scanner"
+            id="angle"
+            value="angle"
+            class="mt-2 justify-between radio"
+          />
+          <label for="angel">
+            <div
+              class="border border-slate-400 md:h-60 h-40 rounded-xl flex text-center items-center justify-center peer-checked/draft:border-none peer-checked/draft:bg-slate-300 text-slate-300 peer-checked/draft:text-slate-700"
+            >
+              <div
+                class="md: text-4xl font-bold justify-items-center items-center text-center"
+              >
+                {{ angle }}
+              </div>
+            </div>
+            <h3
+              class="text-center font-semibold text-2xl text-slate-400 my-3 uppercase"
+            >
+              angle
+            </h3>
+          </label>
+        </div>
+      </div>
+      <div class="flex flex-wrap justify-between">
+        <div class="w-full mx-10 md:mx-0">
+          <input
+            type="radio"
+            name="scanner"
+            id="latif"
+            value="latif"
+            class="mt-2 justify-between radio"
+          />
+          <label for="latif">
+            <div
+              class="border border-slate-400 md:h-60 h-40 rounded-xl flex text-center items-center justify-center peer-checked/draft:border-none peer-checked/draft:bg-slate-300 text-slate-300 peer-checked/draft:text-slate-700"
+            >
+              <div
+                class="md: text-4xl font-bold justify-items-center items-center text-center"
+              >
+                {{ latif }}
+              </div>
+            </div>
+            <h3
+              class="text-center font-semibold text-2xl text-slate-400 my-3 uppercase"
+            >
+              latif
+            </h3>
+          </label>
+        </div>
+      </div>
+      <div class="flex flex-wrap justify-between">
+        <div class="w-full mx-10 md:mx-0">
+          <input
+            type="radio"
+            name="scanner"
+            id="fazza"
+            value="fazza"
+            class="mt-2 justify-between radio"
+          />
+          <label for="fazza">
+            <div
+              class="border border-slate-400 md:h-60 h-40 rounded-xl flex text-center items-center justify-center peer-checked/draft:border-none peer-checked/draft:bg-slate-300 text-slate-300 peer-checked/draft:text-slate-700"
+            >
+              <div
+                class="md: text-4xl font-bold justify-items-center items-center text-center"
+              >
+                {{ fazza }}
+              </div>
+            </div>
+            <h3
+              class="text-center font-semibold text-2xl text-slate-400 my-3 uppercase"
+            >
+              fazza
+            </h3>
+          </label>
+        </div>
+      </div>
+      <div class="flex flex-wrap justify-between">
+        <div class="w-full mx-10 md:mx-0">
+          <input
+            type="radio"
+            name="scanner"
+            id="antarestar"
+            value="antarestar"
+            class="mt-2 justify-between radio"
+          />
+          <label for="antarestar">
+            <div
+              class="border border-slate-400 md:h-60 h-40 rounded-xl flex text-center items-center justify-center peer-checked/draft:border-none peer-checked/draft:bg-slate-300 text-slate-300 peer-checked/draft:text-slate-700"
+            >
+              <div
+                class="md: text-4xl font-bold justify-items-center items-center text-center"
+              >
+                {{ antare }}
+              </div>
+            </div>
+            <h3
+              class="text-center font-semibold text-2xl text-slate-400 my-3 uppercase"
+            >
+              antarestar
+            </h3>
+          </label>
+        </div>
+      </div>
+    </div>
+  </form>
+
+  <!-- <form action="" method="post">
+    {% csrf_token %}
+    <div class="mt-5">
+      <label for="hs-trailing-button-add-on" class="sr-only">Label</label>
+      <div class="flex rounded-md shadow-sm">
+        {{ form.barcode }}
+        <button
+          type="submit"
+          class="py-3 px-4 inline-flex flex-shrink-0 justify-center items-center gap-2 rounded-r-md border border-transparent font-semibold bg-blue-500 text-white hover:bg-blue-600 focus:z-10 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all text-sm"
+        >
+          Enter
+        </button>
+      </div>
+    </div>
+    <div class="flex flex-wrap justify-between">
+      <div class="w-full mx-10 md:mx-0">{{ form.scanner_id }}</div>
+    </div>
+
+    <button type="submit" class="btn btn-succes">submit</button>
+  </form> -->
+
+  <!-- <form method="post" action="">
+    {% csrf_token %}
+    <div
+      class="flex flex-wrap justify-between justify-items-center gap-1 w-full pt-10 items-center"
+    >
+      {% for scan in scanner %}
       <div class="md:w-1/5 w-full mx-10 md:mx-0">
-        <input type="radio" name="scanner_id" id="scanner_1" class="peer/draft
-        radio" {% if Sortir.scanner_id == 1 %} checked {% else %} '' {% endif %}
+        <input
+          type="radio"
+          name="scanner_id"
+          id="scanner_1"
+          class="peer/draft radio"
         />
         <div
           class="border border-slate-400 md:h-60 h-40 rounded-xl flex text-center items-center justify-center peer-checked/draft:border-none peer-checked/draft:bg-slate-300 text-slate-300 peer-checked/draft:text-slate-700"
         >
           <div
-            class="md:text-6xl text-4xl font-bold justify-items-center items-center text-center"
+            class="md: text-4xl font-bold justify-items-center items-center text-center"
           >
-            <span class="text-center">{{ total1 }}</span>
+            69
           </div>
         </div>
         <h3
           class="text-center font-semibold text-2xl text-slate-400 my-3 uppercase"
         >
-          {{ id_1 }}
+          {{ scan.name }}
         </h3>
       </div>
-
-      <!--  -->
-
-      <div class="md:w-1/5 w-full mx-10 md:mx-0">
-        <input type="radio" name="scanner_id" id="scanner_2" class="peer/draft
-        radio" {% if Sortir.scanner_id == 2 %} checked {% else %} '' {% endif %}
-        />
-        <div
-          class="border border-slate-400 md:h-60 h-40 rounded-xl flex text-center items-center justify-center peer-checked/draft:border-none peer-checked/draft:bg-slate-300 text-slate-300 peer-checked/draft:text-slate-700"
-        >
-          <div
-            class="md:text-6xl text-4xl font-bold justify-items-center items-center text-center"
-          >
-            <span class="text-center">{{ total2 }}</span>
-          </div>
-        </div>
-        <h3
-          class="text-center font-semibold text-2xl text-slate-400 my-3 uppercase"
-        >
-          {{ id_2 }}
-        </h3>
-      </div>
-
-      <!--  -->
-
-      <div class="md:w-1/5 w-full mx-10 md:mx-0">
-        <input type="radio" name="scanner_id" id="scanner_3" class="peer/draft
-        radio" {% if Sortir.scanner_id == 3 %} checked {% else %} '' {% endif %}
-        />
-        <div
-          class="border border-slate-400 md:h-60 h-40 rounded-xl flex text-center items-center justify-center peer-checked/draft:border-none peer-checked/draft:bg-slate-300 text-slate-300 peer-checked/draft:text-slate-700"
-        >
-          <div
-            class="md:text-6xl text-4xl font-bold justify-items-center items-center text-center"
-          >
-            <span class="text-center">{{ total3 }}</span>
-          </div>
-        </div>
-        <h3
-          class="text-center font-semibold text-2xl text-slate-400 my-3 uppercase"
-        >
-          {{ id_3 }}
-        </h3>
-      </div>
-
-      <!--  -->
-
-      <div class="md:w-1/5 w-full mx-10 md:mx-0">
-        <input type="radio" name="scanner_id" id="scanner_4" class="peer/draft
-        radio" {% if Sortir.scanner_id == 4 %} checked {% else %} '' {% endif %}
-        />
-        <div
-          class="border border-slate-400 md:h-60 h-40 rounded-xl flex text-center items-center justify-center peer-checked/draft:border-none peer-checked/draft:bg-slate-300 text-slate-300 peer-checked/draft:text-slate-700"
-        >
-          <div
-            class="md:text-6xl text-4xl font-bold justify-items-center items-center text-center"
-          >
-            <span class="text-center">{{ total4 }}</span>
-          </div>
-        </div>
-        <h3
-          class="text-center font-semibold text-2xl text-slate-400 my-3 uppercase"
-        >
-          {{ id_4 }}
-        </h3>
-      </div>
+      {% endfor %}
     </div>
 
     <div class="mt-5">
@@ -150,14 +254,6 @@
           class="py-3 px-4 block w-full border-gray-200 shadow-sm rounded-l-md text-sm focus:z-10 focus:border-blue-500 focus:ring-blue-500 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400"
           value=""
           required
-          {%
-          block
-          Barcode
-          %}
-          {%
-          endblock
-          Barcode
-          %}
         />
         <button
           type="submit"
@@ -167,10 +263,9 @@
         </button>
       </div>
     </div>
-  </form>
+  </form> -->
   <!-- ./end Scanner Area -->
 
   <!-- <button class="btn btn-primary" onclick="eabutton()">click me</button> -->
-
-  {%endblock%}
 </div>
+{%endblock%}
