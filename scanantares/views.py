@@ -1,35 +1,29 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from scanantares.models import *
-from .forms import FormSortir
 from django.contrib import messages
-from django.shortcuts import redirect
+from django.utils import timezone
 
 
 def home(req):
+    current_time = timezone.now()
+
+    # if req.session.get('current_day') != current_time.date():
+    #     req.session['count'] = 0
+    # req.session['current_day'] = current_time.date()
     
-    # if req.POST:
-    #     form = FormSortir(req.POST)
-    #     if form.is_valid():
-    #         form.save()
-    #         form=FormSortir()
-    #         pesan="data sukses di simpan"
-    #         context={
-    #             'form':form,
-    #             'pesan':pesan, 
-    #         }
 
     # scanner = Scanner.objects.all()
     total = Sortir.objects.count()
+    double = Double.objects.count()
     angle = Sortir.objects.filter(scanner='angle').count()
     latif = Sortir.objects.filter(scanner='latif').count()
     fazza = Sortir.objects.filter(scanner='fazza').count()
-    antare = Sortir.objects.filter(scanner='antare').count()
-    form = FormSortir()
+    antare = Sortir.objects.filter(scanner='antarestar').count()
 
     context = {
         # 'scanner':scanner, 
         'total':total,
-        'form':form,
+        'double':double,
         'angle':angle,
         'latif':latif,
         'fazza':fazza,
@@ -39,18 +33,28 @@ def home(req):
 
     if req.POST:
         sortir = Sortir()
+        double = Double()
 
         barcode = req.POST.get('barcode')
         scanner = req.POST.get('scanner')
 
-        sortir.barcode = barcode
-        sortir.scanner = scanner
 
-        sortir.save()
+        if Sortir.objects.filter(barcode=barcode).exists():
+            messages.warning(req, 'Barcode ini sudah pernah digunakan')
+            # if Double.objects.filter(barcode=barcode).exists():
+            #     return redirect('/')
 
-        messages.success(req, 'input sukses')
-        return redirect('/')
-        # return render(req,'main.html', context)
+            double.barcode = barcode
+            double.scanner = scanner
+            double.save() 
+
+            return redirect('/')
+        else:
+
+            sortir.barcode = barcode
+            sortir.scanner = scanner
+            sortir.save() 
+            return redirect('/')
 
         
     

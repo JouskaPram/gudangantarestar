@@ -7,11 +7,18 @@ class SortirAdmin(admin.ModelAdmin):
     list_filter = ('scanner',)
     list_per_page = 10
 
-class ScannerAdmin(admin.ModelAdmin):
-    list_display = ['name']
+class DoubleAdmin(admin.ModelAdmin):
+    list_display = ['barcode', 'scanner', 'created_at',]
+    search_fields = ['barcode', 'scanner', 'created_at',]
+    list_filter = ('scanner',)
+    list_per_page = 10
+
+# class ScannerAdmin(admin.ModelAdmin):
+#     list_display = ['name']
 
 
 admin.site.register(Sortir, SortirAdmin)
+admin.site.register(Double, DoubleAdmin)
 # admin.site.register(Scanner, ScannerAdmin)
 
 admin.site.site_header = 'Antarestar'

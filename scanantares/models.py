@@ -24,3 +24,13 @@ class Sortir(models.Model):
 
     def __str__(self):
         return self.barcode
+
+
+class Double(models.Model):
+    barcode = models.CharField(max_length=40)
+
+    scanner = models.CharField(max_length=40, null=True, choices=SCANNER)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.barcode
