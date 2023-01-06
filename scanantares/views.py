@@ -2,6 +2,7 @@ from django.shortcuts import render
 from scanantares.models import *
 from .forms import FormSortir
 from django.contrib import messages
+from django.shortcuts import redirect
 
 
 def home(req):
@@ -48,7 +49,8 @@ def home(req):
         sortir.save()
 
         messages.success(req, 'input sukses')
-        return render(req,'main.html', context)
+        return redirect('/')
+        # return render(req,'main.html', context)
 
         
     
