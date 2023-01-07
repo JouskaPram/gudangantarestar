@@ -4,13 +4,13 @@ from scanantares.models import *
 class SortirAdmin(admin.ModelAdmin):
     list_display = ['barcode', 'scanner', 'created_at',]
     search_fields = ['barcode', 'scanner', 'created_at',]
-    list_filter = ('scanner',)
+    list_filter = ('scanner', 'created_at')
     list_per_page = 10
 
 class DoubleAdmin(admin.ModelAdmin):
     list_display = ['barcode', 'scanner', 'created_at',]
     search_fields = ['barcode', 'scanner', 'created_at',]
-    list_filter = ('scanner',)
+    list_filter = ('scanner', 'created_at')
     list_per_page = 10
 
 # class ScannerAdmin(admin.ModelAdmin):
