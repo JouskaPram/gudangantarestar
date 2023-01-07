@@ -5,7 +5,9 @@
 <div class="md:px-16 md:pt-10 px-3 pt-10">
   <!-- Header Area -->
 
-  <div class="w-full rounded-2xl bg-neutral md:h-56 h-24 flex">
+  <div
+    class="w-full rounded-2xl bg-[#54595F] md:h-56 h-24 flex border-2 border-slate-100"
+  >
     {%load static%}
     <img
       src="{% static 'img/logo.png' %}"
@@ -16,33 +18,33 @@
 
     <div class="flex items-center align-middle px-3">
       <div
-        class="border border-info md:p-10 md:px-10 p-3 rounded-md hover:bg-info"
+        class="md:border-4 border-2 border-slate-100 md:p-10 md:px-10 p-2 rounded-md"
       >
         <h3
-          class="md:text-5xl text-2xl font-bold text-slate-100 align-middle text-left"
+          class="md:text-5xl text-lg font-bold text-white align-middle text-left"
         >
-          {{ total }}
+          <span class="md:inline">Sukses:</span> {{ total }}
         </h3>
       </div>
     </div>
     <div class="flex items-center align-middle px-3">
       <div
-        class="border border-error hover:bg-error md:p-10 md:px-10 p-3 rounded-md text-white"
+        class="md:border-4 border-2 border:slate-100 md:p-10 md:px-10 p-2 rounded-md text-white"
       >
-        <h3 class="md:text-5xl text-2xl font-bold align-middle text-left">
-          {{ double }}
+        <h3 class="md:text-5xl text-lg font-bold align-middle text-left">
+          <span class="md:inline">Deceline:</span> {{ double }}
         </h3>
       </div>
     </div>
     <div
-      class="border-slate-100 h-full md:flex align-middle items-center hidden"
+      class="border-gray-700 h-full md:flex align-middle items-center hidden"
     >
-      <h2 class="text-center font-semibold md:text-5xl px-3 text-slate-100">
+      <h2 class="text-center font-semibold md:text-5xl px-3 text-white">
         Time Now
       </h2>
       <h3
         id="time"
-        class="text-center font-semibold md:text-5xl px-3 text-slate-100"
+        class="text-center font-semibold md:text-5xl px-3 text-white"
       ></h3>
     </div>
   </div>
@@ -86,19 +88,19 @@
 
     <!-- Input Barcode Area -->
 
-    <div class="mt-5">
+    <div class="mt-5 border-2 border-slate-200 rounded-md">
       <label for="hs-trailing-button-add-on" class="sr-only">Label</label>
       <div class="flex rounded-md shadow-sm">
         <input
           type="text"
           id="hs-trailing-button-add-on"
           name="barcode"
-          class="py-3 px-4 block w-full border-gray-200 shadow-sm rounded-l-md text-sm focus:z-10 focus:border-blue-500 focus:ring-blue-500 bg-neutral dark:border-gray-700 dark:text-gray-400"
+          class="py-3 px-4 block w-full shadow-sm rounded-l-md text-sm focus:z-10 focus:border-blue-500 focus:ring-blue-500 bg-[#54595F] text-white"
           required
         />
         <button
           type="submit"
-          class="py-3 px-4 inline-flex flex-shrink-0 justify-center items-center gap-2 rounded-r-md border border-transparent font-semibold bg-blue-600 text-slate-300 hover:bg-blue-700 focus:z-10 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all text-sm"
+          class="py-3 px-4 inline-flex flex-shrink-0 justify-center items-center gap-2 rounded-r-md border border-transparent font-semibold bg-white text-gray-700 hover:bg-white focus:z-10 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all text-sm"
         >
           Enter
         </button>
@@ -139,24 +141,24 @@
         <input
           type="radio"
           name="scanner"
-          id="angle"
-          value="angle"
-          class="mt-2 justify-between radio peer/angle hidden"
+          id="angel"
+          value="angel"
+          class="mt-2 justify-between radio peer/angel hidden"
           required
         />
 
         <label
-          for="angle"
-          class="border border-slate-100 md:h-60 h-40 rounded-xl flex text-center items-center justify-center peer-checked/angle:border-none peer-checked/angle:bg-sky-500 text-slate-100 peer-checked/angle:text-neutral-focus"
+          for="angel"
+          class="border text-base-content border-[#54595F] md:h-60 h-40 rounded-xl flex text-center items-center justify-center peer-checked/angel:border-none peer-checked/angel:bg-[#54595F] text-gray-700 peer-checked/angel:text-white"
         >
           <div
             class="md:text-6xl text-4xl font-bold justify-items-center items-center text-center"
           >
-            {{ angle }}
+            {{ angel }}
           </div>
         </label>
         <h3
-          class="text-center font-semibold md:text-2xl text-lg text-slate-100 my-3 uppercase"
+          class="text-center font-semibold md:text-2xl text-lgtext-base-content my-3 uppercase"
         >
           angel
         </h3>
@@ -174,7 +176,7 @@
 
         <label
           for="latif"
-          class="border border-slate-100 md:h-60 h-40 rounded-xl flex text-center items-center justify-center peer-checked/latif:border-none peer-checked/latif:bg-sky-500 text-slate-100 peer-checked/latif:text-neutral-focus"
+          class="border border-[#54595F] md:h-60 h-40 rounded-xl flex text-center items-center justify-center peer-checked/latif:border-none peer-checked/latif:bg-[#54595F] text-base-content peer-checked/latif:text-white"
         >
           <div
             class="md:text-6xl text-4xl font-bold justify-items-center items-center text-center"
@@ -183,7 +185,7 @@
           </div>
         </label>
         <h3
-          class="text-center font-semibold md:text-2xl text-lg text-slate-100 my-3 uppercase"
+          class="text-center font-semibold md:text-2xl text-lgtext-base-content my-3 uppercase"
         >
           latif
         </h3>
@@ -201,7 +203,7 @@
 
         <label
           for="fazza"
-          class="border border-slate-100 md:h-60 h-40 rounded-xl flex text-center items-center justify-center peer-checked/fazza:border-none peer-checked/fazza:bg-sky-500 text-slate-100 peer-checked/fazza:text-neutral-focus"
+          class="border border-[#54595F] md:h-60 h-40 rounded-xl flex text-center items-center justify-center peer-checked/fazza:border-none peer-checked/fazza:bg-[#54595F] text-base-content peer-checked/fazza:text-white"
         >
           <div
             class="md:text-6xl text-4xl font-bold justify-items-center items-center text-center"
@@ -210,7 +212,7 @@
           </div>
         </label>
         <h3
-          class="text-center font-semibold md:text-2xl text-lg text-slate-100 my-3 uppercase"
+          class="text-center font-semibold md:text-2xl text-lg text-base-content my-3 uppercase"
         >
           fazza
         </h3>
@@ -227,7 +229,7 @@
 
         <label
           for="antarestar"
-          class="border border-slate-100 md:h-60 h-40 rounded-xl flex text-center items-center justify-center peer-checked/antarestar:border-none peer-checked/antarestar:bg-sky-500 text-slate-100 peer-checked/antarestar:text-neutral-focus"
+          class="border border-[#54595F] md:h-60 h-40 rounded-xl flex text-center items-center justify-center peer-checked/antarestar:border-none peer-checked/antarestar:bg-[#54595F] text-base-content peer-checked/antarestar:text-white"
         >
           <div
             class="md:text-6xl text-4xl font-bold justify-items-center items-center text-center"
@@ -236,7 +238,7 @@
           </div>
         </label>
         <h3
-          class="text-center font-semibold md:text-2xl text-lg text-white my-3 uppercase"
+          class="text-center font-semibold md:text-2xl text-lg text-base-content my-3 uppercase"
         >
           antarestar
         </h3>
