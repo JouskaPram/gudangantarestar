@@ -52,6 +52,10 @@
   <!-- Alert Area -->
 
   {% for message in messages %} {% if message.tags == 'warning' %}
+  <audio controls autoplay class="hidden">
+    <source src="{% static 'audio/alarm.mp3' %}" type="audio/mpeg" />
+    Your browser does not support the audio element.
+  </audio>
 
   <div class="alert alert-error shadow-lg mt-5">
     <div>
@@ -94,7 +98,7 @@
         />
         <button
           type="submit"
-          class="py-3 px-4 inline-flex flex-shrink-0 justify-center items-center gap-2 rounded-r-md border border-transparent font-semibold bg-blue-500 text-white hover:bg-blue-600 focus:z-10 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all text-sm"
+          class="py-3 px-4 inline-flex flex-shrink-0 justify-center items-center gap-2 rounded-r-md border border-transparent font-semibold bg-blue-600 text-slate-300 hover:bg-blue-700 focus:z-10 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all text-sm"
         >
           Enter
         </button>
