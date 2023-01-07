@@ -14,7 +14,7 @@
       alt="Antarestar"
     />
     <div class="flex items-center align-middle px-3">
-      <div class="bg-blue-600 p-5 px-10 rounded-md">
+      <div class="border border-blue-600 p-5 px-10 rounded-md">
         <h3
           class="md:text-5xl text-2xl font-bold text-slate-300 align-middle text-left"
         >
@@ -23,7 +23,7 @@
       </div>
     </div>
     <div class="flex items-center align-middle px-3">
-      <div class="bg-rose-600 p-5 px-10 rounded-md">
+      <div class="border border-rose-600 p-5 px-10 rounded-md">
         <h3
           class="md:text-5xl text-2xl font-bold text-slate-300 align-middle text-left"
         >
@@ -49,6 +49,11 @@
   <!-- Alert Area -->
 
   {% for message in messages %} {% if message.tags == 'warning' %}
+  <audio controls autoplay class="hidden">
+    <source src="{% static 'audio/alarm.mp3' %}" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
   <div class="bg-red-500 text-white font-bold rounded-full px-4 py-2">
     {{ message }}
   </div>
@@ -70,12 +75,12 @@
           type="text"
           id="hs-trailing-button-add-on"
           name="barcode"
-          class="py-3 px-4 block w-full border-gray-200 shadow-sm rounded-l-md text-sm focus:z-10 focus:border-blue-500 focus:ring-blue-500 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400"
+          class="py-3 px-4 block w-full bg-slate-300 shadow-sm rounded-l-md text-sm focus:z-10 focus:border-blue-500 focus:ring-blue-500 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400"
           required
         />
         <button
           type="submit"
-          class="py-3 px-4 inline-flex flex-shrink-0 justify-center items-center gap-2 rounded-r-md border border-transparent font-semibold bg-blue-500 text-white hover:bg-blue-600 focus:z-10 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all text-sm"
+          class="py-3 px-4 inline-flex flex-shrink-0 justify-center items-center gap-2 rounded-r-md border border-transparent font-semibold bg-blue-600 text-slate-300 hover:bg-blue-700 focus:z-10 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all text-sm"
         >
           Enter
         </button>
@@ -113,112 +118,113 @@
       class="flex flex-wrap justify-between justify-items-center gap-1 w-full pt-10 items-center"
     >
       <div class="w-full mx-10 md:mx-0 md:w-1/5">
-        <input
-          type="radio"
-          name="scanner"
-          id="angle"
-          value="angle"
-          class="mt-2 justify-between radio peer/angel"
-          required
-        />
         <label for="angle">
-          <div
-            class="border border-slate-400 md:h-60 h-40 rounded-xl flex text-center items-center justify-center peer-checked/angel:border-none peer-checked/angel:bg-slate-300 text-slate-300 peer-checked/angel:text-slate-700"
-          >
+          <input
+            type="radio"
+            name="scanner"
+            id="angle"
+            value="angle"
+            class=" peer hidden"
+            required
+          />
+          
             <div
-              class="md:text-6xl font-bold justify-items-center items-center text-center"
+              class="border border-slate-400 md:h-60 h-40 rounded-xl flex text-center items-center justify-center peer-checked:border-none peer-checked:bg-slate-300 text-slate-300 peer-checked:text-slate-700"
             >
-              {{ angle }}
+              <div
+                class="md:text-6xl font-bold justify-items-center items-center text-center"
+              >
+                {{ angle }}
+              </div>
             </div>
-          </div>
-          <h3
-            class="text-center font-semibold text-2xl text-slate-400 my-3 uppercase"
-          >
-            angle
-          </h3>
+            <h3
+              class="text-center font-semibold text-2xl text-slate-400 my-3 uppercase"
+            >
+              angle
+            </h3>
         </label>
       </div>
 
+      
       <div class="w-full mx-10 md:mx-0 md:w-1/5">
-        <input
-          type="radio"
-          name="scanner"
-          required
-          id="latif"
-          value="latif"
-          class="mt-2 justify-between radio peer/latif"
-          class="mt-2 justify-between radio"
-        />
         <label for="latif">
-          <div
-            class="border border-slate-400 md:h-60 h-40 rounded-xl flex text-center items-center justify-center peer-checked/latif:border-none peer-checked/latif:bg-slate-300 text-slate-300 peer-checked/latif:text-slate-700"
-          >
+          <input
+            type="radio"
+            name="scanner"
+            required
+            id="latif"
+            value="latif"
+            class="peer hidden"
+          />
+        
             <div
-              class="md:text-6xl font-bold justify-items-center items-center text-center"
+              class="border border-slate-400 md:h-60 h-40 rounded-xl flex text-center items-center justify-center peer-checked:border-none peer-checked:bg-slate-300 text-slate-300 peer-checked:text-slate-700"
             >
-              {{ latif }}
+              <div
+                class="md:text-6xl font-bold justify-items-center items-center text-center"
+              >
+                {{ latif }}
+              </div>
             </div>
-          </div>
-          <h3
-            class="text-center font-semibold text-2xl text-slate-400 my-3 uppercase"
-          >
-            latif
-          </h3>
+            <h3
+              class="text-center font-semibold text-2xl text-slate-400 my-3 uppercase"
+            >
+              latif
+            </h3>
         </label>
       </div>
 
       <div class="w-full mx-10 md:mx-0 md:w-1/5">
-        <input
-          type="radio"
-          name="scanner"
-          id="fazza"
-          required
-          value="fazza"
-          class="peer/fazza mt-2 justify-between radio"
-        />
         <label for="fazza">
-          <div
-            class="border border-slate-400 md:h-60 h-40 rounded-xl flex text-center items-center justify-center peer-checked/fazza:border-none peer-checked/fazza:bg-slate-300 text-slate-300 peer-checked/fazza:text-slate-700"
-          >
+          <input
+            type="radio"
+            name="scanner"
+            id="fazza"
+            required
+            value="fazza"
+            class="peer hidden"
+          />
             <div
-              class="md:text-6xl font-bold justify-items-center items-center text-center"
+              class="border border-slate-400 md:h-60 h-40 rounded-xl flex text-center items-center justify-center peer-checked:border-none peer-checked:bg-slate-300 text-slate-300 peer-checked:text-slate-700"
             >
-              {{ fazza }}
+              <div
+                class="md:text-6xl font-bold justify-items-center items-center text-center"
+              >
+                {{ fazza }}
+              </div>
             </div>
-          </div>
-          <h3
-            class="text-center font-semibold text-2xl text-slate-400 my-3 uppercase"
-          >
-            fazza
-          </h3>
+            <h3
+              class="text-center font-semibold text-2xl text-slate-400 my-3 uppercase"
+            >
+              fazza
+            </h3>
         </label>
       </div>
 
       <div class="w-full mx-10 md:mx-0 md:w-1/5">
-        <input
-          type="radio"
-          name="scanner"
-          id="antarestar"
-          required
-          value="antarestar"
-          class="mt-2 justify-between radio peer/antarestar"
-          class="mt-2 justify-between radio"
-        />
         <label for="antarestar">
-          <div
-            class="border border-slate-400 md:h-60 h-40 rounded-xl flex text-center items-center justify-center peer-checked/antarestar:border-none peer-checked/antarestar:bg-slate-300 text-slate-300 peer-checked/antarestar:text-slate-700"
-          >
+          <input
+            type="radio"
+            name="scanner"
+            id="antarestar"
+            required
+            value="antarestar"
+            class="peer hidden"
+          />
             <div
-              class="md:text-6xl font-bold justify-items-center items-center text-center"
+              class="border border-slate-400 md:h-60 h-40 rounded-xl flex text-center items-center justify-center peer-checked:border-none peer-checked:bg-slate-300 text-slate-300 peer-checked:text-slate-700"
             >
-              {{ antare }}
+              <div
+                class="md:text-6xl font-bold justify-items-center items-center text-center"
+              >
+                {{ antare }}
+              </div>
             </div>
-          </div>
-          <h3
-            class="text-center font-semibold text-2xl text-slate-400 my-3 uppercase"
-          >
-            antarestar
-          </h3>
+            <h3
+              class="text-center font-semibold text-2xl text-slate-400 my-3 uppercase"
+            >
+              antarestar
+            </h3>
         </label>
       </div>
     </div>
